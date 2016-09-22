@@ -3,6 +3,7 @@ package jpaLab;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Address {
@@ -12,6 +13,8 @@ public class Address {
 	private Integer id;
 	private String linea1;
 	private String linea2;
+	@ManyToOne
+	private Persona persona;
 
 	public Integer getId() {
 		return id;
@@ -35,6 +38,14 @@ public class Address {
 
 	public void setLinea2(String linea2) {
 		this.linea2 = linea2;
+	}
+
+	public Persona getPersona() {
+		return persona;
+	}
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
 
 }
